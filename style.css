@@ -1,0 +1,136 @@
+/* ---------- CUSTOM PROPERTIES ---------- */
+:root {
+	color-scheme: dark light;
+
+	/* ---------- COLOR STUFF ---------- */
+	--clr-primary: #e2e2e2;
+	--clr-secondary: #121418;
+	--clr-accent-400: #0fc5b0;
+
+	/* ---------- FONT STUFF ---------- */
+	--ff-primary: system-ui;
+
+	--fs-400: 1rem;
+	--fs-700: 1.44rem;
+	--fs-800: 1.728rem;
+	--fs-900: 2.074rem;
+
+	--fw-300: 300;
+	--fw-400: 400;
+	--fw-500: 500;
+	--fw-600: 600;
+	--fw-700: 700;
+}
+
+/* ---------- RESET ---------- */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit;
+}
+body {
+	min-block-size: 100vh;
+	font-family: var(--ff-primary);
+	line-height: 1.8;
+}
+img,
+picture,
+video {
+	display: block;
+	max-inline-size: 100%;
+}
+svg {
+	inline-size: var(--fs-400);
+	display: inline;
+}
+strong {
+	font-weight: var(--fw-600);
+}
+main {
+	display: grid;
+	place-content: center;
+}
+
+/* ---------- HEADER AND PARAGRAPH STUFF ---------- */
+h1 {
+	font-size: var(--fs-900);
+}
+h2 {
+	font-size: var(--fs-800);
+}
+h3 {
+	font-size: var(--fs-700);
+}
+p {
+	font-size: var(--fs-400);
+}
+
+/* ---------- PAGE ---------- */
+.page {
+	max-inline-size: 850px;
+	padding: 3.5rem;
+}
+.page__portrait {
+	margin: 0 auto;
+	border-radius: 100vw;
+	inline-size: 215px;
+	object-fit: cover;
+	aspect-ratio: 1/1;
+}
+.page__h1 {
+	position: relative;
+}
+.page__h1::before {
+	content: '👋';
+	position: absolute;
+	inset: 0 102% auto auto;
+}
+.page__link {
+	text-decoration: underline 2px var(--clr-accent-400);
+	text-underline-offset: 0.2em;
+	font-weight: var(--fw-500);
+	color: var(--clr-secondary);
+}
+.page--icon:after {
+	display: inline-block;
+	content: '';
+	background-image: url(assets/icons/href.svg);
+	inline-size: 10px;
+	aspect-ratio: 1;
+	margin-inline-start: 4px;
+}
+.page__h3 {
+	margin-block-start: 2rem;
+}
+.page--indent {
+	margin-inline-start: 2rem;
+}
+.page--pipe {
+	position: relative;
+}
+.page--pipe::before {
+	content: "";
+	border-inline-start: 2px solid white;
+	block-size: 28.8px;
+	position: absolute;
+	inset: auto auto auto -2rem;
+	border-color: var(--clr-accent-400);
+}
+/* ---------- MEDIA QUERIES ---------- */
+@media (prefers-color-scheme: dark) {
+	body {
+		color: var(--clr-primary);
+		background: var(--clr-secondary);
+	}
+	.page__link {
+		color: var(--clr-primary);
+	}
+	.page--icon:after {
+		filter: invert();
+	}
+}
