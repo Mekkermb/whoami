@@ -54,6 +54,7 @@ strong {
 main {
 	display: grid;
 	place-content: center;
+	min-block-size: 100vh;
 }
 
 /* ---------- HEADER AND PARAGRAPH STUFF ---------- */
@@ -74,31 +75,37 @@ p {
 .page {
 	max-inline-size: 850px;
 	padding: 3.5rem;
+
+	border-radius: 20px;
 }
 .page__portrait {
 	margin: 0 auto;
 	border-radius: 100vw;
 	inline-size: 215px;
 	object-fit: cover;
-	aspect-ratio: 1/1;
+	aspect-ratio: 1;
 }
 .page__h1 {
 	position: relative;
 }
 .page__h1::before {
-	content: '👋';
+	content: "👋";
 	position: absolute;
 	inset: 0 102% auto auto;
 }
 .page__link {
-	text-decoration: underline 2px var(--clr-accent-400);
+	/* text-decoration: solid underline var(--clr-accent-400) 2px; */
+	text-decoration-line: underline;
+	text-decoration-color: var(--clr-accent-400);
+	text-decoration-style: solid;
+	text-decoration-thickness: 2px;
 	text-underline-offset: 0.2em;
 	font-weight: var(--fw-500);
 	color: var(--clr-secondary);
 }
 .page--icon:after {
 	display: inline-block;
-	content: '';
+	content: "";
 	background-image: url(assets/icons/href.svg);
 	inline-size: 10px;
 	aspect-ratio: 1;
@@ -120,6 +127,21 @@ p {
 	position: absolute;
 	inset: auto auto auto -2rem;
 	border-color: var(--clr-accent-400);
+}
+.page--italic {
+	font-style: italic;
+}
+.page--quote {
+	position: relative;
+	font-weight: var(--fw-300);
+}
+.page--quote:before {
+	content: open-quote;
+	font-size: 1.2rem;
+}
+.page--quote:after {
+	content: close-quote;
+	font-size: 1.2rem;
 }
 /* ---------- MEDIA QUERIES ---------- */
 @media (prefers-color-scheme: dark) {
