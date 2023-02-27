@@ -36,17 +36,13 @@
 body {
 	min-block-size: 100vh;
 	font-family: var(--ff-primary);
-	line-height: 1.8;
+	line-height: 1.9;
 }
 img,
 picture,
 video {
 	display: block;
 	max-inline-size: 100%;
-}
-svg {
-	inline-size: var(--fs-400);
-	display: inline;
 }
 strong {
 	font-weight: var(--fw-600);
@@ -91,7 +87,7 @@ p {
 .page__h1::before {
 	content: "👋";
 	position: absolute;
-	inset: 0 102% auto auto;
+	inset: 0 auto auto -3rem;
 }
 .page__link {
 	/* text-decoration: solid underline var(--clr-accent-400) 2px; */
@@ -103,7 +99,7 @@ p {
 	font-weight: var(--fw-500);
 	color: var(--clr-secondary);
 }
-.page--icon:after {
+.page--href:after {
 	display: inline-block;
 	content: "";
 	background-image: url(assets/icons/href.svg);
@@ -143,6 +139,16 @@ p {
 	content: close-quote;
 	font-size: 1.2rem;
 }
+.page__icon {
+	inline-size: var(--fs-400);
+}
+.page__some {
+	display: flex;
+	justify-content: center;
+	gap: 1em;
+	margin-block-start: 1em;
+}
+
 /* ---------- MEDIA QUERIES ---------- */
 @media (prefers-color-scheme: dark) {
 	body {
@@ -152,7 +158,11 @@ p {
 	.page__link {
 		color: var(--clr-primary);
 	}
-	.page--icon:after {
+	.page--href:after {
 		filter: invert();
+	}
+	.page__icon {
+		filter: invert();
+		filter: drop-shadow();
 	}
 }
