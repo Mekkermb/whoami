@@ -1,2 +1,2 @@
-# [whoami](https://mekkermb.github.io/whoami/)
+# [whoami](portfolio.mekker.dk)
  
