@@ -134,6 +134,13 @@ p {
 	position: relative;
 	font-weight: var(--fw-300);
 }
+[data-name="counter"] span {
+	counter-increment: span-counter;
+}
+[data-name="counter"] span:before {
+	content: counter(span-counter) ". ";
+	font-weight: var(--fw-500);
+}
 .page--quote:before {
 	content: open-quote;
 	font-size: 1.2rem;
