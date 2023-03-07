@@ -173,15 +173,16 @@ p {
 .showcase.active {
 	display: block;
 }
-.showcase__img {
+.showcase__mattepainting {
 	filter: opacity(0.5);
-	aspect-ratio: 4/1;
+	width: 100%;
+	aspect-ratio: 21/9;
 	object-fit: cover;
 	transition: filter ease 500ms;
 	isolation: isolate;
 	box-shadow: 0 0 20px 10px hsla(0, 0%, 0%, 0.1);
 }
-.showcase__img:hover {
+.showcase__mattepainting:hover {
 	filter: opacity(1);
 	object-fit: cover;
 }
