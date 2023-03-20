@@ -41,6 +41,19 @@ blockquote,
 dl,
 dd {
 	margin: 0;
+	font-weight: var(--fw-400);
+}
+
+h1 {
+	font-size: var(--fs-900);
+}
+
+h2 {
+	font-size: var(--fs-800);
+}
+
+h3 {
+	font-size: var(--fs-700);
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -56,9 +69,10 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-	min-height: 100vh;
+	min-block-size: 100vh;
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
+	font-family: var(--ff-primary);
 }
 
 /* A elements that don't have a class get default styles */
@@ -69,7 +83,7 @@ a:not([class]) {
 /* Make images easier to work with */
 img,
 picture {
-	max-width: 100%;
+	max-inline-size: 100%;
 	display: block;
 }
 
