@@ -1,13 +1,11 @@
-/* ---------- CUSTOM PROPERTIES ---------- */
+/* custom properties */
 :root {
 	color-scheme: dark light;
 
-	/* ---------- COLOR STUFF ---------- */
 	--clr-primary: #e2e2e2;
 	--clr-secondary: #121418;
 	--clr-accent-400: #0fc5b0;
 
-	/* ---------- FONT STUFF ---------- */
 	--ff-primary: system-ui;
 
 	--fs-400: 1rem;
@@ -20,16 +18,17 @@
 	--fw-500: 500;
 	--fw-600: 600;
 	--fw-700: 700;
+
+	--radius: 0.5rem;
 }
 
-/* Box sizing rules */
+/* reset */
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
 }
 
-/* Remove default margin */
 body,
 h1,
 h2,
@@ -41,53 +40,33 @@ blockquote,
 dl,
 dd {
 	margin: 0;
-	font-weight: var(--fw-400);
 }
 
-h1 {
-	font-size: var(--fs-900);
-}
-
-h2 {
-	font-size: var(--fs-800);
-}
-
-h3 {
-	font-size: var(--fs-700);
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
 	list-style: none;
 }
 
-/* Set core root defaults */
 html:focus-within {
 	scroll-behavior: smooth;
 }
 
-/* Set core body defaults */
 body {
-	min-block-size: 100vh;
+	min-height: 100vh;
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
-	font-family: var(--ff-primary);
 }
 
-/* A elements that don't have a class get default styles */
 a:not([class]) {
 	text-decoration-skip-ink: auto;
 }
 
-/* Make images easier to work with */
 img,
 picture {
-	max-inline-size: 100%;
+	max-width: 100%;
 	display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
 input,
 button,
 textarea,
@@ -95,7 +74,6 @@ select {
 	font: inherit;
 }
 
-/* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
 	html:focus-within {
 		scroll-behavior: auto;
@@ -110,13 +88,46 @@ select {
 	}
 }
 
-/* Composition */
+/* global styles */
 
+/* composition */
+.wrap {
+	margin-inline-start: auto;
+	margin-inline-end: auto;
+	padding: 0 1rem;
+	max-inline-size: 50rem;
+}
 
-/* Utilities */
+.flow > * + * {
+	margin-block-start: var(--flow-space, 1rem);
+}
 
+.split {
+	display: flex;
+	flex-direction: column;
+	row-gap: 4rem;
+}
 
-/* Block */
+.split > * {
+	flex-basis: 100%;
+}
 
+@media (min-width: 40em) {
+	.split {
+		flex-direction: row;
+		column-gap: 2.5rem;
+	}
+}
 
-/* Exception */
+.xl-space {
+	margin-block-start: 5rem !important;
+}
+
+/* utility */
+.radius {
+	border-radius: var(--radius);
+}
+
+/* block */
+
+/* exception */
