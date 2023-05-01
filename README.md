@@ -1,2 +1,2 @@
-# [whoami](https://portfolio.mekker.dk)
+# [whoami](https://malbi.dk)
  
