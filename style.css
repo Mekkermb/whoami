@@ -20,6 +20,7 @@
   --fw-700: 700;
 
   --radius: 0.5rem;
+  --gap: 1rem;
 }
 
 /* reset */
@@ -156,33 +157,22 @@ a:not([class])::after {
   }
 }
 
-/* composition */
-.section {
-  padding: 3.5rem;
-}
-
-.wrap {
-  margin-inline-start: auto;
-  margin-inline-end: auto;
-  max-inline-size: 50rem;
-}
+/* ----- COMPOSITION ----- */
 
 .flow > * + * {
   margin-block-start: var(--flow-space, 1rem);
 }
 
-.split {
+.flex-child > * {
   display: flex;
-  flex-direction: column;
-  row-gap: 4rem;
 }
 
-.split > * {
+.flex-child > * > * {
   flex-basis: 100%;
 }
 
 @media (min-width: 40em) {
-  .split {
+  .flex-child {
     flex-direction: row;
     column-gap: 2.5rem;
   }
@@ -190,15 +180,6 @@ a:not([class])::after {
 
 .xl-space {
   margin-block-start: 5rem !important;
-}
-
-/* utility */
-.radius {
-  border-radius: var(--radius);
-}
-
-.hcenter {
-  margin-inline: auto;
 }
 
 .pipe {
@@ -212,6 +193,35 @@ a:not([class])::after {
   position: absolute;
   inset: auto auto auto -2rem;
   border-color: var(--clr-accent-400);
+}
+
+.pipe + section {
+  padding-inline-start: 1rem;
+}
+/* ----- COMPOSITION END ----- */
+
+/* ----- UTILITY ----- */
+
+.text-center {
+  text-align: center;
+}
+
+.section {
+  padding: 3.5rem;
+}
+
+.wrap {
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  max-inline-size: 50rem;
+}
+
+.radius {
+  border-radius: var(--radius);
+}
+
+.hcenter {
+  margin-inline: auto;
 }
 
 .quote {
@@ -228,8 +238,9 @@ a:not([class])::after {
   content: close-quote;
   font-size: 1.2rem;
 }
+/* ----- UTILITY END ----- */
 
-/* block */
+/* ----- BLOCK ----- */
 .card__content > header {
   position: relative;
 }
@@ -275,8 +286,9 @@ a:not([class])::after {
   margin: 0 0 0 2rem;
   padding: 0;
 }
+/* ----- BLOCK END ----- */
 
-/* exception */
+/* ----- EXCEPTION ----- */
 [data-name="counter"] span {
   counter-increment: span-counter;
 }
@@ -285,3 +297,4 @@ a:not([class])::after {
   content: counter(span-counter) ". ";
   font-weight: var(--fw-500);
 }
+/* ----- EXCEPTION END ----- */
