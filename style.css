@@ -178,6 +178,10 @@ a:not([class])::after {
   }
 }
 
+.flex-child-column > * {
+  flex-direction: column;
+}
+
 .xl-space {
   margin-block-start: 5rem !important;
 }
@@ -202,12 +206,28 @@ a:not([class])::after {
 
 /* ----- UTILITY ----- */
 
+.img-round {
+  border-radius: 100vw;
+  aspect-ratio: 1;
+  object-fit: cover;
+  inline-size: 50%;
+}
+
 .text-center {
   text-align: center;
 }
 
 .section {
   padding: 3.5rem;
+}
+
+.grid-2-col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-items-center {
+  align-items: center;
 }
 
 .wrap {
