@@ -1,2 +1,2 @@
-# [whoami](https://malbi.dk)
+# [whoami](https://mekkermb.github.io/whoami)
  
